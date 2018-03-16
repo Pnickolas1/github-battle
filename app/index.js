@@ -12,7 +12,7 @@ require('./index.css');
 class App extends React.Component {
   render() {
     return (
-      <div>Hello World!</div>
+      <div>Hello Peter Tountas!</div>
     )
   }
 }

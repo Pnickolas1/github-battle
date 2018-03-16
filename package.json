@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "create": "webpack"
+    "start": "webpack-dev-server --open"
   },
   "repository": {
     "type": "git",
@@ -12,8 +12,11 @@
   },
   "author": "",
   "license": "ISC",
-  "babel":{
-    "presets": ["env", "react"]
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
   },
   "bugs": {
     "url": "https://github.com/Pnickolas1/github-battle/issues"
