@@ -1,4 +1,6 @@
 # github-battle
 
-- To start
+### To start
+ * `cd into github-battle`
+ * `npm install`  
  * `npm run start`
