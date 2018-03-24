@@ -56,14 +56,51 @@ li{
   margin: 10px;
 }
 
+a {
+  text-decoration: none;
+  color: #d0021B;
+}
+
 .nav {
   display: flex;
 }
 
 .active { 
   font-weight: bold;
+  font-stretch: expanded;
+
 }
 
 .nav li {
   margin-right: 15px;
+}
+
+.home-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  color: #e6e6e6;
+  background: #0a0a0a;
+  border: none;
+  font-size: 16px;
+  border-radius: 3px;
+  width: 200px;
+  text-align: center;
+  display: block;
+  padding: 10px 0;
+  margin: 10px auto;
+}
+
+.button:hover:enabled {
+  background: 
+    linear-gradient(#1a1a1a, #d0021B);    
+    color: #fff;
+    margin: 10px auto;
+}
+
+.button:active {
+  transform: translate(2px);
 }

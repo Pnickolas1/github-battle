@@ -5,7 +5,9 @@ var Route = ReactRouter.Route;
 var Switch = ReactRouter.Switch;
 var Popular = require('./Popular');
 var Nav = require('./Nav')
-
+var Home = require('./Home')
+var Battle = require('./Battle')
+var Switch = ReactRouter.Switch;
 // a component is concerned about 3 things: 
 //state
 // lifecycle methods
@@ -18,7 +20,14 @@ class App extends React.Component {
       <Router>
         <div className='container'>
           <Nav />
-          <Route path='/popular' component={Popular} />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path='/battle' component={Battle} />
+            <Route path='/popular' component={Popular} />
+            <Route render={function() {
+              return <p> NOT FOUND </p>
+            }} />
+          </Switch>
         </div>
       </Router>
     )
