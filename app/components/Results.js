@@ -3,16 +3,19 @@ var queryString = require('query-string');
 var api = require('../utils/api');
 const Link = require('react-router-dom').Link
 var PropTypes = require('prop-types')
+var PlayerPreview = require('./PlayerPreview')
+
 
 function Player (props){
   return (
     <div>
       <h1 className='header'>{props.label}</h1>
       <h3 style={{ textAlign: 'center' }}>Score: {props.score}</h3>
-
     </div>
   )
 }
+
+
 
 class Results extends React.Component{
   constructor(props){
