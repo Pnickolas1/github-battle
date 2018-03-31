@@ -1,9 +1,10 @@
 # github-battle
+A small SPA built with react
 
-## hosted on
-[I'm an inline-style link](https://github-battle-66cd4.firebaseapp.com)
+### Hosted on Firebase
+[Github-Battle](https://github-battle-66cd4.firebaseapp.com)
 
-### To start
+#### Install
  * `cd into github-battle`
  * `npm install`  
  * `npm run start`
