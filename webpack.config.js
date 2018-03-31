@@ -1,7 +1,12 @@
 var path = require('path'); // this comes with node do not have to npm install this 
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack')
 
-module.exports = {
+
+//NODE_ENV to production
+//uglify 
+
+var config = {
   entry: './app/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -24,3 +29,18 @@ module.exports = {
   ],
   mode: "development"
 };
+
+
+if (process.env.NODE_ENV === 'production') {
+  config.plugins.push(
+    new webpack.DefinePlugin({
+      'process.env' : {
+        'NODE_ENV' : JSON.stringify(process.env.NODE_ENV)
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin()
+  )
+}
+
+
+module.exports = config;
