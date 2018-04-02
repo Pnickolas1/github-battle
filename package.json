@@ -27,6 +27,7 @@
   "homepage": "https://github.com/Pnickolas1/github-battle#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
     "query-string": "^6.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

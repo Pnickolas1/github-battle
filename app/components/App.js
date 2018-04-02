@@ -1,14 +1,14 @@
-var React = require('react');
-var ReactRouter = require('react-router-dom');
-var Router = ReactRouter.BrowserRouter;
-var Route = ReactRouter.Route;
-var Switch = ReactRouter.Switch;
-var Popular = require('./Popular');
-var Results = require('./Results')
-var Nav = require('./Nav')
-var Home = require('./Home')
-var Battle = require('./Battle')
-var Switch = ReactRouter.Switch;
+const React = require('react');
+const ReactRouter = require('react-router-dom');
+const Router = ReactRouter.BrowserRouter;
+const Route = ReactRouter.Route;
+const Switch = ReactRouter.Switch;
+const Nav = require('./Nav');
+const Home = require('./Home');
+const Battle = require('./Battle');
+const Popular = require('./Popular');
+const Results = require('./Results');
+
 // a component is concerned about 3 things: 
 //state
 // lifecycle methods
@@ -26,9 +26,7 @@ class App extends React.Component {
             <Route exact path='/battle' component={Battle} />
             <Route path='/battle/results' component={Results} />
             <Route path='/popular' component={Popular} />
-            <Route render={function() {
-              return <p> NOT FOUND </p>
-            }} />
+            <Route render={()  => <p> NOT FOUND </p>} />
           </Switch>
         </div>
       </Router>
