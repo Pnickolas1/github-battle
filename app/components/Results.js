@@ -1,14 +1,12 @@
-var React = require('react');
-var queryString = require('query-string');
-var api = require('../utils/api');
+const React = require('react');
+const queryString = require('query-string');
+const api = require('../utils/api');
 const Link = require('react-router-dom').Link
-var PropTypes = require('prop-types')
-var PlayerPreview = require('./PlayerPreview')
-var Loading = require('./Loading')
+const PropTypes = require('prop-types')
+const PlayerPreview = require('./PlayerPreview')
+const Loading = require('./Loading')
 
-function Profile(props){
-  const { info } = props
-
+function Profile({ info }) {
   return (
     <PlayerPreview avatar={info.avatar_url} username={info.login}>
       <ul className='space-list-items'>
@@ -28,12 +26,12 @@ Profile.propTypes = {
   info: PropTypes.object.isRequired
 }
 
-function Player (props){
+function Player ({ label, score, profile }){
   return (
     <div>
-      <h1 className='header'>{props.label}</h1>
-      <h3 style={{ textAlign: 'center' }}>Score: {props.score}</h3>
-      <Profile info={props.profile} />
+      <h1 className='header'>{label}</h1>
+      <h3 style={{ textAlign: 'center' }}>Score: {score}</h3>
+      <Profile info={profile} />
     </div>
   )
 }
@@ -53,35 +51,29 @@ class Results extends React.Component{
   }
 
   componentDidMount() {
-    console.log(this.props)
-    var players = queryString.parse(this.props.location.search)
+    const { playerOneName, playerTwoName } = queryString.parse(this.props.location.search)
     api.battle([
-      players.playerOneName,
-      players.playerTwoName
-    ]).then(function(results){
+      playerOneName,
+      playerTwoName
+    ]).then((results) => {
       if (results == null ){
-        return this.setState(function (){
-          error: 'looks like there was an error, confirm both users exists';
+        return this.setState(() => ({
+          error: 'looks like there was an error, confirm both users exists',
           loading : false
-        })
+        }))
       }
 
-      this.setState(function () {
-        return {
+      this.setState(() => ({
           error: null,
           winner: results[0],
           loser: results[1],
           loading: false
-        }
-      })
-    }.bind(this))
+        }))
+    })
   }
 
   render() {
-    const error = this.state.error
-    const winner = this.state.winner
-    const loser = this.state.loser
-    const loading = this.state.loading
+    const { error, winner, loser, loading } = this.state
 
     if (loading === true ){
       return <Loading />

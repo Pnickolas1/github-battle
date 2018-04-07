@@ -68,7 +68,6 @@ PlayerInput.defaultPropTypes = {
 class Battle extends React.Component{
   constructor(props) {
     super(props)
-    
     this.state = {
       playerOneName: '',
       playerTwoName: '',
@@ -79,11 +78,10 @@ class Battle extends React.Component{
     this.handleReset = this.handleReset.bind(this)
   }
 
-
   handleSubmit(id, username){
     this.setState(() => ({
       [id + 'Name'] : username,
-      [id + 'Image'] : 'https://github.com/' + username + '.png?size=200',
+      [id + 'Image'] : `https://github.com/${username}.png?size=200`
     }))
   }
 
