@@ -7,7 +7,6 @@ var Loading = require('./Loading')
 function RepoGrid(props){
   return(
     <ul className='popular-list'>
-
       {props.repos.map(function(repo, index){
         return (
           <li key={index} className='popular-item'>
