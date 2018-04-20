@@ -37,7 +37,8 @@ RepoGrid.propTypes = {
 
 
 function SelectLanguage({ selectedLanguage, onSelect }) {
-  var languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'];
+
+  const languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'];
   return (
     <div>
       <ul className='languages'>
@@ -62,31 +63,29 @@ SelectLanguage.propTypes = {
 }
 
 class Popular extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedLanguage: 'All',
-      repos: null
-    };
 
-    this.updateLanguage = this.updateLanguage.bind(this);
-  }
+  state = {
+    selectedLanguage: 'All',
+    repos: null
+  };
+
 
   componentDidMount(){
     this.updateLanguage(this.state.selectedLanguage)
   }
 
-  updateLanguage(lang) {
+  updateLanguage = (lang) => {
     this.setState(() => ({
         selectedLanguage: lang,
         repos: null
       }))
     fetchPopularRepos(lang)
-    .then((repos) => this.setState(() => {repos: repos }))
+    .then((repos) => this.setState(() => ({repos: repos })))
   }
   
 
   render() {
+    console.log(this.state)
     const { selectedLanguage, repos } = this.state
     return (
       <div>
