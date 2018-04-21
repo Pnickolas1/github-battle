@@ -20,19 +20,21 @@
       "env",
       "react"
     ],
-    "plugins": ["transform-class-properties"]
+    "plugins": [
+      "transform-class-properties"
+    ]
   },
   "bugs": {
     "url": "https://github.com/Pnickolas1/github-battle/issues"
   },
   "homepage": "https://github.com/Pnickolas1/github-battle#readme",
   "dependencies": {
-    "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "query-string": "^6.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^4.2.2",
+    "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
